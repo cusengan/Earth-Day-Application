@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/action_setting"
-        android:titleCondensed="Menu"
+        android:title="Menu"
         app:showAsAction="always"/>
 
 </menu>
