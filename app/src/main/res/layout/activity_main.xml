@@ -19,29 +19,30 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
-    <EditText
+    <TextView
+        android:id="@+id/Temperature"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextView"
-        android:hint="@string/Reminder"
-        android:textSize="22sp"/>
+        android:layout_weight="0.23"
+        android:text="@string/Temperature" />
 
-    <Switch
-        android:id="@+id/switch1"
+    <TextView
+        android:id="@+id/Condition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/Alert_Switch"
-        android:layout_weight="0.11" />
+        android:layout_weight="0.23"
+        android:text="@string/Condition" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/Location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.13"
-        android:hint="@string/Timer" />
+        android:layout_weight="0.23"
+        android:text="@string/Location" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:contentDescription="@string/yahoologo"
+        android:id="@+id/yahoo"
         android:layout_width="380dp"
         android:layout_height="80dp"
         app:srcCompat="@drawable/yahoo" />
