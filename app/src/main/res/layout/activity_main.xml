@@ -62,7 +62,8 @@
                 android:layout_weight="0.30"
                 android:gravity="center"
                 android:text="@string/Temperature"
-                android:textSize="45sp" />
+                android:textSize="45sp"
+                android:textColor="#0d0a0c" />
 
             <TextView
                 android:id="@+id/Condition"
@@ -71,7 +72,8 @@
                 android:layout_weight="0.30"
                 android:gravity="center"
                 android:text="@string/Condition"
-                android:textSize="45sp" />
+                android:textSize="45sp"
+                android:textColor="#0d0a0c" />
 
             <TextView
                 android:id="@+id/Location"
@@ -80,7 +82,8 @@
                 android:layout_weight="0.30"
                 android:gravity="center"
                 android:text="@string/Location"
-                android:textSize="45sp" />
+                android:textSize="45sp"
+                android:textColor="#0d0a0c" />
 
             <ImageView
                 android:id="@+id/yahoo"
