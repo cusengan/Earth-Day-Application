@@ -11,6 +11,12 @@
     android:orientation="vertical">
 
 
+
+
+
+
+
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
@@ -29,6 +35,7 @@
         android:id="@+id/Temperature"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
         android:layout_weight="0.23"
         android:text="@string/Temperature" />
 

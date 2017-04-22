@@ -16,8 +16,8 @@
         />
 
     <item
-        android:title="Tbn"
-        android:id="@+id/item_Tbn"
+        android:title="Send Message"
+        android:id="@+id/item_Send"
         />
 
     <item
