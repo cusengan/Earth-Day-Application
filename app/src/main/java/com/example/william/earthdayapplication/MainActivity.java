@@ -14,6 +14,7 @@ import android.net.Uri;
 
 import android.graphics.drawable.Drawable;
 
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -25,6 +26,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.net.URL;
@@ -34,6 +36,7 @@ import com.example.william.earthdayapplication.data.Channel;
 import com.example.william.earthdayapplication.data.Item;
 import com.example.william.earthdayapplication.service.WeatherCB;
 import com.example.william.earthdayapplication.service.YahooWeather;
+import com.example.william.earthdayapplication.SettingActivity;
 
 public class MainActivity extends AppCompatActivity implements WeatherCB {
 
@@ -47,7 +50,11 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private Button SearchButton;
     private ProgressDialog progress;
     private ImageView yahoo;
+
+    private Switch VibrateSwitch;
+
     private int temp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +68,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         Condition = (TextView) findViewById(R.id.Condition);
         Location = (TextView) findViewById(R.id.Location);
         yahoo = (ImageView) findViewById(R.id.yahoo);
-
-
+        VibrateSwitch = (Switch) findViewById(R.id.VibrateSwitch);
 
         service = new YahooWeather(this);
         progress = new ProgressDialog(this);
@@ -75,8 +81,6 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         progress.show();
 
     }
-
-
 
 
     @Override
@@ -103,14 +107,21 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         temp = item.getCondition().getTemperature();
 
     }
-
+    public void AlertVibrate() {
+        Vibrator vibrator;
+        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(300);
+    }
 
     public void temperatureAttr(int temperature){
         if(temperature < 33){
+            AlertVibrate();
             Toast.makeText(this, "Tender plants will die from this cold weather!", Toast.LENGTH_LONG).show();
         }if (temperature < 29){
+            AlertVibrate();
             Toast.makeText(this, "Fruits and moderately hard plants from this cold weather!", Toast.LENGTH_LONG).show();
         }if (temperature > 89) {
+            AlertVibrate();
             Toast.makeText(this, "Your non-desert biome plants require slightly more water!", Toast.LENGTH_LONG).show();
         }
     }
