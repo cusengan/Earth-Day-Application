@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/StockSnap_JRVIMXKSYX"
+    android:background="@drawable/earthpic"
     android:gravity="center"
     tools:context="com.example.william.earthdayapplication.MainActivity"
     android:weightSum="1"
