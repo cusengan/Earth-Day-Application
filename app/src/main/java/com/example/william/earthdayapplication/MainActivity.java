@@ -7,19 +7,25 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText searchBar;
-    private Button button;
+    private TextView Temperature;
+    private TextView Condition;
+    private TextView Location;
+    private ImageView yahoo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        searchBar = (EditText) findViewById(R.id.editTextView);
-        button = (Button) findViewById(R.id.button);
+        Temperature = (TextView) findViewById(R.id.Temperature);
+        Condition = (TextView) findViewById(R.id.Condition);
+        Location = (TextView) findViewById(R.id.Location);
+        yahoo = (ImageView) findViewById(R.id.yahoo);
 
         //this works
 
