@@ -24,6 +24,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private ImageView yahoo;
 
     private Switch VibrateSwitch;
+    private Switch MusicSwitch;
 
     private int temp;
     private MediaPlayer mySound;
@@ -70,7 +72,8 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         Condition = (TextView) findViewById(R.id.Condition);
         Location = (TextView) findViewById(R.id.Location);
         yahoo = (ImageView) findViewById(R.id.yahoo);
-        VibrateSwitch = (Switch) findViewById(R.id.VibrateSwitch);
+        VibrateSwitch = (Switch) findViewById(R.id.MusicSwitch);
+        MusicSwitch = (Switch) findViewById(R.id.MusicSwitch);
         mySound = MediaPlayer.create(this, R.raw.john_harrison_4_seasons_vivaldi);
 
         service = new YahooWeather(this);
@@ -79,7 +82,19 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         service.refreshWeather("Arlington, TX");
 
-
+        MusicSwitch = (Switch) findViewById(R.id.MusicSwitch);
+        MusicSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(getApplicationContext(), "ON", Toast.LENGTH_LONG).show();
+                    mySound.start();
+                } else {
+                    Toast.makeText(getApplicationContext(), "OFF", Toast.LENGTH_LONG).show();
+                    mySound.stop();
+                }
+            }
+        });
 
         progress.show();
 
@@ -119,10 +134,10 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     public void temperatureAttr(int temperature){
         if(temperature < 33){
             AlertVibrate();
-            Toast.makeText(this, "Tender plants will die from this cold weather!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Tender plants will die from this cold weather. Bring them in!", Toast.LENGTH_LONG).show();
         }if (temperature < 29){
             AlertVibrate();
-            Toast.makeText(this, "Fruits and moderately hard plants from this cold weather!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Tender plants, fruits, and moderately hard plants will die from this cold weather. Bring them in!", Toast.LENGTH_LONG).show();
         }if (temperature > 89) {
             AlertVibrate();
             Toast.makeText(this, "Your non-desert biome plants require slightly more water!", Toast.LENGTH_LONG).show();
@@ -212,6 +227,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
   
         return super.onOptionsItemSelected(item);
     }
+
 
 }
 
