@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     public void composeMmsMessage(String message, Uri attachment) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setType("text/plain");
-        intent.setData(Uri.parse("smsto:4693058613"));  // This ensures only SMS apps respond
+        intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
         intent.putExtra("sms_body", message);
         intent.putExtra(Intent.EXTRA_STREAM, attachment);
         if (intent.resolveActivity(getPackageManager()) != null) {
