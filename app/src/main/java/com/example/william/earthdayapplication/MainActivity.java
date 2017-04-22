@@ -20,6 +20,7 @@ import android.telephony.SmsManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
     private ScrollView scrolling;
     private YahooWeather service;
-
+    private Button SearchButton;
     private ProgressDialog progress;
     private ImageView yahoo;
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         setContentView(R.layout.activity_main);
 
         UserInput = (EditText) findViewById(R.id.UserInput);
+        SearchButton = (Button) findViewById(R.id.SearchButton);
         weatherPic = (ImageView) findViewById(R.id.weather_picture);
         Temperature = (TextView) findViewById(R.id.Temperature);
         Condition = (TextView) findViewById(R.id.Condition);
