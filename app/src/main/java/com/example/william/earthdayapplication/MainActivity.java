@@ -10,6 +10,7 @@ import android.content.Intent;
 
 import android.app.ProgressDialog;
 
+import android.media.MediaPlayer;
 import android.net.Uri;
 
 import android.graphics.drawable.Drawable;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private Switch VibrateSwitch;
 
     private int temp;
+    private MediaPlayer mySound;
 
 
     @Override
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         Location = (TextView) findViewById(R.id.Location);
         yahoo = (ImageView) findViewById(R.id.yahoo);
         VibrateSwitch = (Switch) findViewById(R.id.VibrateSwitch);
+        mySound = MediaPlayer.create(this, R.raw.john_harrison_4_seasons_vivaldi);
 
         service = new YahooWeather(this);
         progress = new ProgressDialog(this);
