@@ -19,7 +19,7 @@
         android:id="@+id/editTextView"
         android:hint="Type something here"
         android:textSize="22sp"/>
-    
+
 
 
 
