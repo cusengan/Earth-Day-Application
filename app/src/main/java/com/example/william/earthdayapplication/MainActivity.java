@@ -1,10 +1,12 @@
 package com.example.william.earthdayapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -41,23 +43,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.main_menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item){
-//        int itemClicked = item.getItemId();
-//
-//        if(itemClicked == R.id.action_setting){
-//            Toast.makeText(MainActivity.this,"You pushed the button!", Toast.LENGTH_LONG).show();
-//
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        int click = item.getItemId();
+
+        if (click == R.id.item_Help) {
+
+            Intent toy = new Intent(getApplicationContext(), Main2Activity.class);
+            startActivity(toy);
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
 }
+
+
+
+
