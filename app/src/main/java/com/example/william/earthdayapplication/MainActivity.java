@@ -9,44 +9,59 @@ import android.content.Context;
 import android.content.Intent;
 
 import android.app.ProgressDialog;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.net.URL;
+import java.net.URLConnection;
 
 import com.example.william.earthdayapplication.data.Channel;
+import com.example.william.earthdayapplication.data.Item;
 import com.example.william.earthdayapplication.service.WeatherCB;
 import com.example.william.earthdayapplication.service.YahooWeather;
 
 public class MainActivity extends AppCompatActivity implements WeatherCB {
 
+    private ImageView weatherPic;
     private TextView Temperature;
     private TextView Condition;
     private TextView Location;
-    private ImageView yahoo;
+
+    private ScrollView scrolling;
     private YahooWeather service;
+
     private ProgressDialog progress;
+    private ImageView yahoo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        weatherPic = (ImageView) findViewById(R.id.weather_picture);
         Temperature = (TextView) findViewById(R.id.Temperature);
         Condition = (TextView) findViewById(R.id.Condition);
         Location = (TextView) findViewById(R.id.Location);
         yahoo = (ImageView) findViewById(R.id.yahoo);
+
+
+
         service = new YahooWeather(this);
-        service.setLocation("Dallas, TX");
         progress = new ProgressDialog(this);
         progress.setMessage("Loading . . .");
-        //progress.show();
+
+        service.refreshWeather("Dallas, TX");
+
+
+
+        progress.show();
 
     }
 
@@ -57,11 +72,26 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     public void servicePass(Channel channel) {
         progress.hide();
 
+        Item item = channel.getItem();
+        int resourceId = getResources().getIdentifier("drawable/cloud" + item.getCondition().getCode(), null, getPackageName());
+
+        @SuppressWarnings("deprecation")
+        Drawable weatherIconDrawble = getResources().getDrawable(resourceId);
+
+        weatherPic.setImageDrawable(weatherIconDrawble);
+
+
+
+        Temperature.setText(item.getCondition().getTemperature()+"\u00B0" + channel.getUnits().getTemperature());
+        Condition.setText(item.getCondition().getDescription());
+        Location.setText(service.getLocation());
+
     }
 
     @Override
     public void serviceFail(Exception exception) {
         Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG);
+        Temperature.setText(exception.getMessage());
         progress.hide();
     }
 
@@ -73,10 +103,6 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     }
 
 
-
-
-
-        
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
