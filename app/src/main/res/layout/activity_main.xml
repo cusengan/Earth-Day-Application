@@ -98,6 +98,15 @@
                 android:layout_weight="0.23"
                 android:layout_gravity="center_vertical|center_horizontal"
                 app:srcCompat="@drawable/plant" />
+
+            <Switch
+                android:id="@+id/MusicSwitch"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_weight="0.23"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:text="Classical musical for your plants to grow"
+                android:textSize="25sp"/>
         </LinearLayout>
     </ScrollView>
 
