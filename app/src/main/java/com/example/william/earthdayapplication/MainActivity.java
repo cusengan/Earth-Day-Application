@@ -104,12 +104,13 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
 
     public void temperatureAttr(int temperature){
-        if(temperature < 24){
-            Toast.makeText(this, "YOUR PLANT WILL DIE", Toast.LENGTH_LONG).show();
-        }else{
-            Toast.makeText(this, "Your plant is normal", Toast.LENGTH_LONG).show();
+        if(temperature < 33){
+            Toast.makeText(this, "Tender plants will die from this cold weather!", Toast.LENGTH_LONG).show();
+        }if (temperature < 29){
+            Toast.makeText(this, "Fruits and moderately hard plants from this cold weather!", Toast.LENGTH_LONG).show();
+        }if (temperature > 89) {
+            Toast.makeText(this, "Your non-desert biome plants require slightly more water!", Toast.LENGTH_LONG).show();
         }
-
     }
 
     @Override
