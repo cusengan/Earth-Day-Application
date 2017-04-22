@@ -8,5 +8,6 @@
     <string name="Condition">Condition Here</string>
     <string name="Location">Location Here</string>
     <string name="yahoologo">here is yahoologo</string>
+    <string name="VibrateSwitch">Vibration</string>
 
 </resources>
