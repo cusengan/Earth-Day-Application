@@ -18,6 +18,12 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weather_picture"
+        android:contentDescription="this is the weather picture"
+        android:src="@drawable/na"/>
 
     <TextView
         android:id="@+id/Temperature"
@@ -43,8 +49,8 @@
     <ImageView
         android:contentDescription="@string/yahoologo"
         android:id="@+id/yahoo"
-        android:layout_width="380dp"
-        android:layout_height="80dp"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
         app:srcCompat="@drawable/yahoo" />
 
 
