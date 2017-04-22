@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">EarthDayApplication</string>
-    <string name="Reminder">Type Your Reminder Here.</string>
-    <string name="Alert_Switch">Activate App Alert Here</string>
-    <string name="Timer">Timer to leave plant in rain</string>
+    <string name="Temperature">Temperature</string>
+    <string name="Condition">Condition Here</string>
+    <string name="Location">Location Here</string>
+    <string name="yahoologo">here is yahoologo</string>
+
 </resources>

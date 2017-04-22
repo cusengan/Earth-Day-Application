@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.william.earthdayapplication.MainActivity">
 
     <item
-        android:title="Item"
-        android:id="@+id/action_setting"
-        android:titleCondensed="Menu"
-        app:showAsAction="ifRoom"/>
+    android:title="Instruction"
+    android:id="@+id/item_Instruction"/>
+
+    <item
+        android:title="Setting"
+        android:id="@+id/item_Setting"/>
+
+    <item
+        android:title="Tbn"
+        android:id="@+id/item_Tbn"/>
+
 
 </menu>
