@@ -1,6 +1,14 @@
 package com.example.william.earthdayapplication;
 
+
 import android.content.Intent;
+
+
+import android.content.ClipData;
+import android.content.Context;
+import android.content.Intent;
+
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,12 +21,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.william.earthdayapplication.data.Channel;
+import com.example.william.earthdayapplication.service.WeatherCB;
+import com.example.william.earthdayapplication.service.YahooWeather;
+
+public class MainActivity extends AppCompatActivity implements WeatherCB {
 
     private TextView Temperature;
     private TextView Condition;
     private TextView Location;
     private ImageView yahoo;
+    private YahooWeather service;
+    private ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +42,27 @@ public class MainActivity extends AppCompatActivity {
         Condition = (TextView) findViewById(R.id.Condition);
         Location = (TextView) findViewById(R.id.Location);
         yahoo = (ImageView) findViewById(R.id.yahoo);
+        service = new YahooWeather(this);
+        service.setLocation("Dallas, TX");
+        progress = new ProgressDialog(this);
+        progress.setMessage("Loading . . .");
+       // progress.show();
 
-        //this works
+    }
 
 
+
+
+    @Override
+    public void servicePass(Channel channel) {
+        progress.hide();
+
+    }
+
+    @Override
+    public void serviceFail(Exception exception) {
+        Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG);
+        progress.hide();
     }
 
     @Override
@@ -43,15 +74,35 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public boolean onOptionsItemSelected(MenuItem item){
-        int click = item.getItemId();
 
+
+        
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int itemClicked = item.getItemId();
+
+        if(itemClicked == R.id.item_Setting){
+
+            Context context = MainActivity.this;
+            Intent activity_setting = new Intent(context, SettingActivity.class);
+            startActivity(activity_setting);
+
+          
+
+        }
+        if(itemClicked == R.id.item_Instruction){
+
+
+        }
         if (click == R.id.item_Help) {
 
             Intent toy = new Intent(getApplicationContext(), Main2Activity.class);
             startActivity(toy);
-
         }
+        
+  
+  
         return super.onOptionsItemSelected(item);
     }
 
