@@ -92,9 +92,23 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
 
 
-        Temperature.setText(item.getCondition().getTemperature()+"\u00B0" + channel.getUnits().getTemperature());
+        Temperature.setText(item.getCondition().getTemperature()+"\u00B0" + channel.getUnits().getTemperature());//temperature in F
         Condition.setText(item.getCondition().getDescription());
         Location.setText(service.getLocation());
+
+        ////////////// Do stuff with temperature ////////////////////
+
+        temperatureAttr(item.getCondition().getTemperature());
+
+    }
+
+
+    public void temperatureAttr(int temperature){
+        if(temperature < 24){
+            Toast.makeText(this, "YOUR PLANT WILL DIE", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(this, "Your plant is normal", Toast.LENGTH_LONG).show();
+        }
 
     }
 
@@ -117,8 +131,9 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         if(UserInput != null && !UserInput.equals("")){
             service.refreshWeather(UserInput.getText().toString());
             progress.show();
-
         }
+
+
     }
 
 
