@@ -10,4 +10,19 @@
     <string name="yahoologo">here is yahoologo</string>
     <string name="VibrateSwitch">Vibration</string>
 
+
+    <string name="instructionsHelp">
+        Hi, welcome to Flower Power (name subject to change)! This app will ensure that flower lovers are able to take care of their
+        plants while checking the weather. Users are able to type in almost every city in the world and are able to get the temperature
+        reading and a message explaing how to take care of their plant.\n\n
+
+
+        Thanks to VClouds @ DevianArt for the photos! (http://vclouds.deviantart.com/art/VClouds-Weather-Icons-179152045)
+
+
+
+
+
+    </string>
+
 </resources>
