@@ -5,7 +5,9 @@
     <item
         android:title="Item"
         android:id="@+id/action_setting"
+
         android:titleCondensed="Menu"
         app:showAsAction="ifRoom"/>
+
 
 </menu>
