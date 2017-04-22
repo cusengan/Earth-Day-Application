@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import android.app.ProgressDialog;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -75,7 +76,15 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
 
 
-
+    public void composeMmsMessage(String message, Uri attachment) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setType("text/plain");
+        intent.putExtra("sms_body", message);
+        intent.putExtra(Intent.EXTRA_STREAM, attachment);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
         
 
     @Override
@@ -87,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
             Context context = MainActivity.this;
             Intent activity_setting = new Intent(context, SettingActivity.class);
             startActivity(activity_setting);
-
           
 
         }
@@ -95,13 +103,18 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
 
         }
-        if (click == R.id.item_Help) {
+        if (itemClicked == R.id.item_Help) {
 
             Intent toy = new Intent(getApplicationContext(), Main2Activity.class);
             startActivity(toy);
         }
-        
-  
+
+        if (itemClicked == R.id.item_Tbn) {
+
+            String message = "Check this out!";
+            Uri webpage = Uri.parse(message);
+            composeMmsMessage(message, webpage);
+        }
   
         return super.onOptionsItemSelected(item);
     }
