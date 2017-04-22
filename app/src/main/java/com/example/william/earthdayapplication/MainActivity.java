@@ -20,6 +20,7 @@ import android.telephony.SmsManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -112,6 +113,15 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     }
 
 
+    public void searchButton(View view){
+        if(UserInput != null && !UserInput.equals("")){
+            service.refreshWeather(UserInput.getText().toString());
+            progress.show();
+
+        }
+    }
+
+
 
 
 
@@ -140,12 +150,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         }
         if(itemClicked == R.id.item_Instruction){
-            if(UserInput != null && !UserInput.equals("")){
-                service.refreshWeather(UserInput.getText().toString());
-                progress.show();
 
-
-            }
 
 
         }
