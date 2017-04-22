@@ -23,6 +23,10 @@ public class YahooWeather {
     private String location;
     private Exception error;
 
+    public String getLocation() {
+        return location;
+    }
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -33,19 +37,24 @@ public class YahooWeather {
         this.callback = callback;
     }
 
-    public void refreshWeather(final String location){
+    public void refreshWeather(String l){
+
+        this.location = l;
         new AsyncTask<String, Void, String>(){
 
             @Override
             protected String doInBackground(String... params) {
-                String YQL = String.format("select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"%s\")", location);
+                String YQL = String.format("select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"%s\")", params[0]);
 
-                String endpoint = String.format("https://query.yahooapis.com/v1/public/yql?q=&format=json", Uri.encode(YQL));
+                String endpoint = String.format("https://query.yahooapis.com/v1/public/yql?q=%s&format=json", Uri.encode(YQL));
 
 
                 try {
                     URL url = new URL(endpoint);
+
+
                     URLConnection connection = url.openConnection();
+
                     InputStream inputStream = connection.getInputStream();
                     BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
@@ -75,27 +84,30 @@ public class YahooWeather {
                 }
 
                 try {
+
                     JSONObject data = new JSONObject(s);
 
-                    JSONObject queryResults = new JSONObject("query");
+                    JSONObject queryResults = data.optJSONObject("query");
 
                     int count = queryResults.optInt("count");
                     if(count == 0){
-                        callback.serviceFail(new LocationWeatherException("No weather information founds " + location));
+                        callback.serviceFail(new LocationWeatherException("No weather information found for " + location));
                         return;
                     }
 
                     Channel channel = new Channel();
-                    channel.populate(queryResults.optJSONObject("Results").optJSONObject("channel"));
+                    channel.populate(queryResults.optJSONObject("results").optJSONObject("channel"));
 
                     callback.servicePass(channel);
+
+
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    callback.serviceFail(e);
                 }
             }
 
 
-        }.execute();
+        }.execute(location);
     }
 
     public class LocationWeatherException extends Exception{

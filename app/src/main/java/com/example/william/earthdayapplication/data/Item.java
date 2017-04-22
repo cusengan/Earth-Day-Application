@@ -7,8 +7,13 @@ import org.json.JSONObject;
  */
 
 public class Item implements JSON_populator{
+
+
     private Condition condition;
 
+    public Condition getCondition() {
+        return condition;
+    }
 
     public void populate(JSONObject data){
         condition = new Condition();
