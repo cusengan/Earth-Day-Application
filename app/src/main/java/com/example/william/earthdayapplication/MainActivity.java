@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
 
         }
-        if (click == R.id.item_Help) {
+        if (itemClicked == R.id.item_Help) {
 
             Intent toy = new Intent(getApplicationContext(), Main2Activity.class);
             startActivity(toy);
