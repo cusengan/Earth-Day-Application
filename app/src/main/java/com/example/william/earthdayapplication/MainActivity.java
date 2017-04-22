@@ -20,6 +20,7 @@ import android.telephony.SmsManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -34,6 +35,7 @@ import com.example.william.earthdayapplication.service.YahooWeather;
 
 public class MainActivity extends AppCompatActivity implements WeatherCB {
 
+    private EditText UserInput;
     private ImageView weatherPic;
     private TextView Temperature;
     private TextView Condition;
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        UserInput = (EditText) findViewById(R.id.UserInput);
         weatherPic = (ImageView) findViewById(R.id.weather_picture);
         Temperature = (TextView) findViewById(R.id.Temperature);
         Condition = (TextView) findViewById(R.id.Condition);
@@ -95,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
     @Override
     public void serviceFail(Exception exception) {
-        Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG);
+        Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG).show();
         Temperature.setText(exception.getMessage());
         progress.hide();
     }
