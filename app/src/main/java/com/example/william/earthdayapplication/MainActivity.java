@@ -1,5 +1,8 @@
 package com.example.william.earthdayapplication;
 
+import android.content.ClipData;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Location = (TextView) findViewById(R.id.Location);
         yahoo = (ImageView) findViewById(R.id.yahoo);
 
+
         //this works
 
 
@@ -41,23 +45,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.main_menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item){
-//        int itemClicked = item.getItemId();
-//
-//        if(itemClicked == R.id.action_setting){
-//            Toast.makeText(MainActivity.this,"You pushed the button!", Toast.LENGTH_LONG).show();
-//
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int itemClicked = item.getItemId();
+
+        if(itemClicked == R.id.item_Setting){
+            Context context = MainActivity.this;
+            Intent activity_setting = new Intent(context, SettingActivity.class);
+            startActivity(activity_setting);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
 }
