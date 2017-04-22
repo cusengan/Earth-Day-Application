@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private TextView Condition;
     private TextView Location;
 
-    private ScrollView scrolling;
     private YahooWeather service;
 
     private ProgressDialog progress;
@@ -139,6 +138,12 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         }
         if(itemClicked == R.id.item_Instruction){
+            if(UserInput != null && !UserInput.equals("")){
+                service.refreshWeather(UserInput.getText().toString());
+                progress.show();
+
+
+            }
 
 
         }
