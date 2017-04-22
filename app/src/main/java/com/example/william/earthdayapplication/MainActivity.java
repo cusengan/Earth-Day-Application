@@ -1,6 +1,9 @@
 package com.example.william.earthdayapplication;
 
 
+import android.content.Intent;
+
+
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +14,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -71,6 +75,9 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
 
 
+
+        
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int itemClicked = item.getItemId();
@@ -86,9 +93,22 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         }
         if(itemClicked == R.id.item_Instruction){
 
+
         }
+        if (click == R.id.item_Help) {
+
+            Intent toy = new Intent(getApplicationContext(), Main2Activity.class);
+            startActivity(toy);
+        }
+        
+  
+  
         return super.onOptionsItemSelected(item);
     }
 
 
 }
+
+
+
+

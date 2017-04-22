@@ -4,17 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.william.earthdayapplication.MainActivity">
 
+
     <item
     android:title="Instruction"
-    android:id="@+id/item_Instruction"/>
+    android:id="@+id/item_Instruction"
+        />
 
     <item
         android:title="Setting"
-        android:id="@+id/item_Setting"/>
+        android:id="@+id/item_Setting"
+        />
 
     <item
         android:title="Tbn"
-        android:id="@+id/item_Tbn"/>
+        android:id="@+id/item_Tbn"
+        />
 
+    <item
+        android:title="Help"
+        android:id="@+id/item_Help"
+        />
 
 </menu>
