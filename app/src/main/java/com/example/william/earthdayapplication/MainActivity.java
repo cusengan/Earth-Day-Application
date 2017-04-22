@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private Button SearchButton;
     private ProgressDialog progress;
     private ImageView yahoo;
+    private int temp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         ////////////// Do stuff with temperature ////////////////////
 
         temperatureAttr(item.getCondition().getTemperature());
+        temp = item.getCondition().getTemperature();
 
     }
 
@@ -166,14 +168,15 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         }
         if(itemClicked == R.id.item_Instruction){
+            Intent toy = new Intent(getApplicationContext(), Main2Activity.class);
+            startActivity(toy);
 
 
 
         }
         if (itemClicked == R.id.item_Help) {
 
-            Intent toy = new Intent(getApplicationContext(), Main2Activity.class);
-            startActivity(toy);
+
         }
 
         if (itemClicked == R.id.item_Send) {
