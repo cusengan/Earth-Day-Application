@@ -26,24 +26,32 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        int itemClicked = item.getItemId();
 
-        if(itemClicked == R.id.action_setting){
-            Toast.makeText(MainActivity.this,"You pushed the button!", Toast.LENGTH_LONG).show();
 
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.main_menu, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item){
+//        int itemClicked = item.getItemId();
+//
+//        if(itemClicked == R.id.action_setting){
+//            Toast.makeText(MainActivity.this,"You pushed the button!", Toast.LENGTH_LONG).show();
+//
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
 
 }
