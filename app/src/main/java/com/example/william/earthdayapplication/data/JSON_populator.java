@@ -9,5 +9,5 @@ package com.example.william.earthdayapplication.data;
 import org.json.JSONObject;
 
 public interface JSON_populator {
-    void populate(JSONObject p);
+    void populate(JSONObject data);
 }
