@@ -20,6 +20,7 @@ import android.telephony.SmsManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private TextView Condition;
     private TextView Location;
 
-    private ScrollView scrolling;
     private YahooWeather service;
     private Button SearchButton;
     private ProgressDialog progress;
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         progress = new ProgressDialog(this);
         progress.setMessage("Loading . . .");
 
-        service.refreshWeather("Dallas, TX");
+        service.refreshWeather("Arlington, TX");
 
 
 
@@ -92,10 +92,25 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
 
 
-        Temperature.setText(item.getCondition().getTemperature()+"\u00B0" + channel.getUnits().getTemperature());
+        Temperature.setText(item.getCondition().getTemperature()+"\u00B0" + channel.getUnits().getTemperature());//temperature in F
         Condition.setText(item.getCondition().getDescription());
         Location.setText(service.getLocation());
 
+        ////////////// Do stuff with temperature ////////////////////
+
+        temperatureAttr(item.getCondition().getTemperature());
+
+    }
+
+
+    public void temperatureAttr(int temperature){
+        if(temperature < 33){
+            Toast.makeText(this, "Tender plants will die from this cold weather!", Toast.LENGTH_LONG).show();
+        }if (temperature < 29){
+            Toast.makeText(this, "Fruits and moderately hard plants from this cold weather!", Toast.LENGTH_LONG).show();
+        }if (temperature > 89) {
+            Toast.makeText(this, "Your non-desert biome plants require slightly more water!", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -113,13 +128,23 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     }
 
 
+    public void searchButton(View view){
+        if(UserInput != null && !UserInput.equals("")){
+            service.refreshWeather(UserInput.getText().toString());
+            progress.show();
+        }
+
+
+    }
+
+
 
 
 
     public void composeMmsMessage(String message, Uri attachment) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setType("text/plain");
-        intent.setData(Uri.parse("smsto:4693058613"));  // This ensures only SMS apps respond
+        intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
         intent.putExtra("sms_body", message);
         intent.putExtra(Intent.EXTRA_STREAM, attachment);
         if (intent.resolveActivity(getPackageManager()) != null) {
@@ -143,6 +168,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         if(itemClicked == R.id.item_Instruction){
 
 
+
         }
         if (itemClicked == R.id.item_Help) {
 
@@ -152,8 +178,6 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         if (itemClicked == R.id.item_Send) {
 
-//            SmsManager smsmanager =  SmsManager.getDefault();
-//            smsmanager.sendTextMessage("4693058613", null, "Check this out", null, null);
                 String message = "Check this out!";
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
@@ -161,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
   
         return super.onOptionsItemSelected(item);
     }
+    
 
 
 }

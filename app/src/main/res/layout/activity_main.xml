@@ -41,6 +41,7 @@
                 android:id="@+id/SearchButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="searchButton"
                 android:layout_weight="0.23"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="@string/SearchButton"
