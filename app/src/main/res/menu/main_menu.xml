@@ -6,12 +6,12 @@
 
 
     <item
-    android:title="Instruction"
+    android:title="Instructions"
     android:id="@+id/item_Instruction"
         />
 
     <item
-        android:title="Setting"
+        android:title="Settings"
         android:id="@+id/item_Setting"
         />
 
