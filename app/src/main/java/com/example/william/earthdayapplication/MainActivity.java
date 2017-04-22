@@ -150,8 +150,6 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         if (itemClicked == R.id.item_Send) {
 
-//            SmsManager smsmanager =  SmsManager.getDefault();
-//            smsmanager.sendTextMessage("4693058613", null, "Check this out", null, null);
                 String message = "Check this out!";
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
