@@ -1,5 +1,10 @@
 package com.example.william.earthdayapplication;
 
+
+import android.content.ClipData;
+import android.content.Context;
+import android.content.Intent;
+
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
 
 
+
     @Override
     public void servicePass(Channel channel) {
         progress.hide();
@@ -70,7 +76,12 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         int itemClicked = item.getItemId();
 
         if(itemClicked == R.id.item_Setting){
-            Toast.makeText(MainActivity.this,"You pushed the button!", Toast.LENGTH_LONG).show();
+
+            Context context = MainActivity.this;
+            Intent activity_setting = new Intent(context, SettingActivity.class);
+            startActivity(activity_setting);
+
+          
 
         }
         if(itemClicked == R.id.item_Instruction){
