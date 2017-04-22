@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EarthDayApplication.iml" filepath="$PROJECT_DIR$/EarthDayApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Earth-Day-Application.iml" filepath="$PROJECT_DIR$/Earth-Day-Application.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
