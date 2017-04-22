@@ -7,8 +7,15 @@ import org.json.JSONObject;
  */
 
 public class Unit implements JSON_populator {
-   // @Overrride
-   public void populate(JSONObject p){
 
+   private String temperature;
+
+   public String getTemperature() {
+      return temperature;
+   }
+
+   // @Overrride
+   public void populate(JSONObject data){
+      temperature = data.optString("temperature");
    }
 }
