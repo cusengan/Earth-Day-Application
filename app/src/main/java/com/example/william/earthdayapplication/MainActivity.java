@@ -177,8 +177,14 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         }
 
         if (itemClicked == R.id.item_Send) {
-
-                String message = "Check this out!";
+            if(temperature < 33){
+                String message = "Your tender plants will die from this cold weather. Bring them in!";
+            }if (temperature < 29){
+                String message = "Yruits and moderately hard plants from this cold weather. Bring them in!";
+            }if (temperature > 89) {
+                String message = "Your non-desert biome plants require slightly more water!";
+            }
+                //below attachment is invalid and hence wont attach anything
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
         }
