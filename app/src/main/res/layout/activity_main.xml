@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#005500"
-
+    android:background="#9eff7d"
+    android:gravity="center"
     tools:context="com.example.william.earthdayapplication.MainActivity"
     android:weightSum="1"
     android:orientation="vertical">
 
-
-    
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -20,41 +18,69 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/weather_picture"
-        android:contentDescription="this is the weather picture"
-        android:src="@drawable/na"/>
 
-    <TextView
-        android:id="@+id/Temperature"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:layout_weight="0.23"
-        android:text="@string/Temperature" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/Condition"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.23"
-        android:text="@string/Condition" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/Location"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.23"
-        android:text="@string/Location" />
+            <EditText
+                android:id="@+id/UserInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:hint="@string/UserInput"
+                android:textSize="35sp" />
 
-    <ImageView
-        android:contentDescription="@string/yahoologo"
-        android:id="@+id/yahoo"
-        android:layout_width="80dp"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/yahoo" />
+            <ImageView
+                android:id="@+id/weather_picture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.40"
+                android:contentDescription="@string/weatherpic"
+                android:src="@drawable/na" />
+
+            <TextView
+                android:id="@+id/Temperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:text="@string/Temperature"
+                android:textSize="45sp" />
+
+            <TextView
+                android:id="@+id/Condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:text="@string/Condition"
+                android:textSize="45sp" />
+
+            <TextView
+                android:id="@+id/Location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:text="@string/Location"
+                android:textSize="45sp" />
+
+            <ImageView
+                android:id="@+id/yahoo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:contentDescription="@string/yahoologo"
+                android:gravity="center"
+                app:srcCompat="@drawable/yahoo" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>
