@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         service.setLocation("Dallas, TX");
         progress = new ProgressDialog(this);
         progress.setMessage("Loading . . .");
-       // progress.show();
+        //progress.show();
 
     }
 
