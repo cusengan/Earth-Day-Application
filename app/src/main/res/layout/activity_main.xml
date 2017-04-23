@@ -35,7 +35,8 @@
                 android:layout_weight="0.23"
                 android:gravity="center"
                 android:hint="@string/UserInput"
-                android:textSize="35sp" />
+                android:textSize="35sp"
+                android:paddingBottom="20dp"/>
 
             <Button
                 android:id="@+id/SearchButton"
@@ -43,9 +44,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_weight="0.23"
-                android:background="#ecff8c"
+                android:background="#c2458c"
                 android:onClick="searchButton"
-                android:text="@string/SearchButton" />
+                android:text="@string/SearchButton"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
 
             <ImageView
                 android:id="@+id/weather_picture"
@@ -53,7 +58,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.40"
                 android:contentDescription="@string/weatherpic"
-                android:src="@drawable/na" />
+                android:src="@drawable/na"
+                android:paddingTop="15dp"
+                android:paddingLeft="80dp"
+                android:paddingRight="100dp"
+                android:paddingBottom="15dp"/>
 
             <TextView
                 android:id="@+id/Temperature"
@@ -83,7 +92,8 @@
                 android:gravity="center"
                 android:text="@string/Location"
                 android:textSize="45sp"
-                android:textColor="#0d0a0c" />
+                android:textColor="#0d0a0c"
+                android:paddingBottom="80dp"/>
 
             <ImageView
                 android:id="@+id/imageView"
@@ -104,8 +114,8 @@
 
             <ImageView
                 android:id="@+id/yahoo"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_weight="0.23"
                 android:textColor="#0d0a0c"
