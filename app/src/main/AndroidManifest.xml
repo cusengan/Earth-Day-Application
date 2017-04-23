@@ -3,8 +3,8 @@
     package="com.example.william.earthdayapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -19,18 +19,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-
-        <activity android:name=".SettingActivity"
+        <activity
+            android:name=".SettingActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.Parent_ACTIVITY"
-                android:value=".MainActivity"/>
-
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".Alarm"></activity>
     </application>
 
 </manifest>

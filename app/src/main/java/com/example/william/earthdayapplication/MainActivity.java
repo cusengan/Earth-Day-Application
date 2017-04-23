@@ -394,6 +394,11 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
             }
 
         }
+
+        if(itemClicked == R.id.alarm){
+            Intent toy = new Intent(getApplicationContext(), Alarm.class);
+            startActivity(toy);
+        }
   
         return super.onOptionsItemSelected(item);
     }

@@ -2,7 +2,7 @@
 
     <string name="UserInput">Search City Here.</string>
     <string name="app_name">GrOwFlO</string>
-    <string name="SearchButton">Hit Search</string>
+    <string name="SearchButton">Search</string>
     <string name="weatherpic">weather here</string>
     <string name="Temperature">Temperature</string>
     <string name="Condition">Condition Here</string>
