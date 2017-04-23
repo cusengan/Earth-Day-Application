@@ -237,12 +237,16 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
                 String message = "Your tender plants will die from this cold weather. Bring them in!";
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
-            }if (temp < 29){
+            }else if (temp < 29){
                 String message = "Your fruits and moderately hard plants from this cold weather. Bring them in!";
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
-            }if (temp > 89) {
+            }else if (temp > 89) {
                 String message = "Your non-desert biome plants require slightly more water!";
+                Uri webpage = Uri.parse(message);
+                composeMmsMessage(message, webpage);
+            }else{
+                String message = "Play outside, plant a tree, be green and mean!!!";
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
             }
