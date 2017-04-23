@@ -34,6 +34,6 @@ public class SettingActivity extends AppCompatActivity {
             Vibrator VibrateSwitch = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
             VibrateSwitch.vibrate(300);
         }
-    }
+}
 
 
