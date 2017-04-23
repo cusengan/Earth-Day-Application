@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         progress.show();
 
-        // Set a key listener callback so that users can search by pressing "Enter"
+         //Set a key listener callback so that users can search by pressing "Enter"
         UserInput.setOnKeyListener(new OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -170,9 +170,10 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
     @Override
     public void serviceFail(Exception exception) {
-        Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG).show();
-        Temperature.setText(exception.getMessage());
         progress.hide();
+        Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG).show();
+
+
     }
 
     @Override
