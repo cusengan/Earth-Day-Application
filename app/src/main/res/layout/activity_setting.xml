@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#130cdbed"
     tools:context="com.example.william.earthdayapplication.SettingActivity">
 
 
@@ -25,9 +26,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/factText"
         android:text="Random Fact"
+        android:layout_gravity="center_vertical|center_horizontal"
         android:layout_below="@+id/buttonFacts"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
+        android:layout_marginRight="90dp"
+        android:layout_marginLeft="90dp"
         android:textSize="20sp"/>
 
 </RelativeLayout>

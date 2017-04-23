@@ -230,9 +230,9 @@
                 android:layout_weight="0.30"
                 android:gravity="center"
                 android:text="Take care of the Earth and perform helpful tasks to have your tree grow or watch it wilt! Given tree is of a random healthiness."
-                android:textSize="40sp"
+                android:textSize="25sp"
                 android:textColor="#de06a0"
-                android:paddingBottom="40dp"
+                android:paddingBottom="25dp"
                 android:visibility="gone"
                 android:paddingTop="70dp"/>
 
@@ -269,18 +269,72 @@
                 android:text="Classical musical for your plants to grow"
                 android:textSize="25sp"/>
 
+            <ImageView
+                android:id="@+id/imgBig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="250dp"
+                android:maxHeight="250dp"
+                android:scaleType="fitCenter"
+                android:paddingTop="60dp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:srcCompat="@drawable/bigtree" />
+
+            <ImageView
+                android:id="@+id/imgPalm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="250dp"
+                android:maxHeight="250dp"
+                android:scaleType="fitCenter"
+                android:paddingTop="60dp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:srcCompat="@drawable/palm" />
+
+
+            <ImageView
+                android:id="@+id/imgSak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="250dp"
+                android:maxHeight="250dp"
+                android:scaleType="fitCenter"
+                android:paddingTop="60dp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="@drawable/sakura" />
+
+            <TextView
+                android:id="@+id/Speech5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:text="Congratuation, this tree is the result of your preseverance."
+                android:textColor="#de06a0"
+                android:textSize="25sp"
+                android:visibility="gone" />
+
             <TextView
                 android:id="@+id/Speech4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.30"
                 android:gravity="center"
-                android:text="Be sure to visit the drop down menu in the upper right hand corner for more"
-                android:textSize="25sp"
-                android:textColor="#de06a0"
                 android:paddingBottom="20dp"
-                android:visibility="visible"
-                android:paddingTop="20dp"/>
+                android:paddingTop="20dp"
+                android:text="Be sure to visit the drop down menu in the upper right hand corner for more"
+                android:textColor="#de06a0"
+                android:textSize="25sp"
+                android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/yahoo"

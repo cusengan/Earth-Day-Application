@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private TextView Speech2;
     private TextView Speech3;
     private TextView Speech4;
+    private TextView Speech5;
 
     private ImageView silotree1;
     private ImageView silotree2;
@@ -67,7 +68,9 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private ImageView silotree8;
     private ImageView silotree9;
     private ImageView silotree10;
-
+    private ImageView imgSak;
+    private ImageView imgBig;
+    private ImageView imgPalm;
 
     private YahooWeather service;
     private Button SearchButton;
@@ -105,7 +108,9 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         silotree8 = (ImageView) findViewById(R.id.silotree8);
         silotree9 = (ImageView) findViewById(R.id.silotree9);
         silotree10 = (ImageView) findViewById(R.id.silotree10);
-
+        imgSak = (ImageView) findViewById(R.id.imgSak);
+        imgBig = (ImageView) findViewById(R.id.imgBig);
+        imgPalm = (ImageView) findViewById(R.id.imgPalm);
 
         weatherPic = (ImageView) findViewById(R.id.weather_picture);
         Temperature = (TextView) findViewById(R.id.Temperature);
@@ -114,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         Speech2 = (TextView) findViewById(R.id.Speech2);
         Speech3 = (TextView) findViewById(R.id.Speech3);
         Speech4 = (TextView) findViewById(R.id.Speech4);
+        Speech5 = (TextView) findViewById(R.id.Speech5);
         yahoo = (ImageView) findViewById(R.id.yahoo);
         VibrateSwitch = (Switch) findViewById(R.id.MusicSwitch);
         MusicSwitch = (Switch) findViewById(R.id.MusicSwitch);
@@ -253,11 +259,6 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
             case 3: silotree3.setVisibility(View.VISIBLE); score =3;break;
             case 4: silotree4.setVisibility(View.VISIBLE); score =4;break;
             case 5: silotree5.setVisibility(View.VISIBLE); score =5;break;
-            case 6: silotree6.setVisibility(View.VISIBLE);score =6;break;
-            case 7: silotree7.setVisibility(View.VISIBLE);score =7;break;
-            case 8: silotree8.setVisibility(View.VISIBLE);score =8;break;
-            case 9: silotree9.setVisibility(View.VISIBLE);score =9;break;
-            case 10: silotree10.setVisibility(View.VISIBLE);score =10;break;
         }
         play = 777;
         YesButton.setVisibility(View.GONE);
@@ -297,6 +298,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
                 case 8: silotree8.setVisibility(View.VISIBLE);score =8;break;
                 case 9: silotree9.setVisibility(View.VISIBLE);score =9;break;
                 case 10: silotree10.setVisibility(View.VISIBLE);score =10;break;
+                case 12: silotree10.setVisibility(View.GONE); score = 12;break;
             }
         }
 
@@ -317,6 +319,17 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
                 case 8: silotree8.setVisibility(View.VISIBLE);score =8;break;
                 case 9: silotree9.setVisibility(View.VISIBLE);score =9;break;
                 case 10: silotree10.setVisibility(View.VISIBLE);score =10;break;
+                case 12:  score = 15;
+                    Random r = new Random();
+                    int num = r.nextInt(3 - 1 + 1) + 1;//(max-min+1)+1
+                       switch(num){
+                           case 1: imgSak.setVisibility(View.VISIBLE);break;
+                           case 2: imgBig.setVisibility(View.VISIBLE);break;
+                           case 3: imgPalm.setVisibility(View.VISIBLE);break;
+                       }
+                       Speech5.setVisibility(View.VISIBLE);
+                    break;
+
             }
         }
 
@@ -342,6 +355,8 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         if(itemClicked == R.id.item_Facts){
 
+            Win(score);
+            Toast.makeText(getApplicationContext(), "You've gained a tree point for visiting facts!", Toast.LENGTH_LONG).show();
             Context context = MainActivity.this;
             Intent activity_setting = new Intent(context, SettingActivity.class);
             startActivity(activity_setting);
@@ -351,7 +366,8 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         if(itemClicked == R.id.item_Instruction){
             Intent toy = new Intent(getApplicationContext(), Main2Activity.class);
             startActivity(toy);
-
+            Win(score);
+            Toast.makeText(getApplicationContext(), "Good for you for reading instruction", Toast.LENGTH_LONG).show();
 
 
         }
