@@ -235,8 +235,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
     public void searchButton(View view){
         if(UserInput != null && !UserInput.equals("")) {
-            twiceCheck += 1;
-            if (twiceCheck <= 2) {
+
                 Toast.makeText(getApplicationContext(), "Good job trying to learn more about your planet's climate", Toast.LENGTH_LONG).show();
                 Win(score);
                 service.refreshWeather(UserInput.getText().toString());
@@ -244,9 +243,6 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                 //UserInput.setVisibility(View.GONE);
                 progress.show();
-            }if(twiceCheck == 3){
-                Toast.makeText(getApplicationContext(), "Keep being curious. However; no more tree points for searching, try again later", Toast.LENGTH_LONG).show();
-            }
         }
     }
 
@@ -259,6 +255,11 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
             case 3: silotree3.setVisibility(View.VISIBLE); score =3;break;
             case 4: silotree4.setVisibility(View.VISIBLE); score =4;break;
             case 5: silotree5.setVisibility(View.VISIBLE); score =5;break;
+            case 6: silotree6.setVisibility(View.VISIBLE);score =6;break;
+            case 7: silotree7.setVisibility(View.VISIBLE);score =7;break;
+            case 8: silotree8.setVisibility(View.VISIBLE);score =8;break;
+            case 9: silotree9.setVisibility(View.VISIBLE);score =9;break;
+            case 10: silotree10.setVisibility(View.VISIBLE);score =10;break;
         }
         play = 777;
         YesButton.setVisibility(View.GONE);
@@ -309,17 +310,17 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         score += 1;
         if (play == 777){
             switch (score){
-                case 1: silotree1.setVisibility(View.VISIBLE); score = 1;break;
-                case 2: silotree2.setVisibility(View.VISIBLE); score =2;break;
-                case 3: silotree3.setVisibility(View.VISIBLE); score =3;break;
-                case 4: silotree4.setVisibility(View.VISIBLE); score =4;break;
-                case 5: silotree5.setVisibility(View.VISIBLE); score =5;break;
-                case 6: silotree6.setVisibility(View.VISIBLE);score =6;break;
-                case 7: silotree7.setVisibility(View.VISIBLE);score =7;break;
-                case 8: silotree8.setVisibility(View.VISIBLE);score =8;break;
-                case 9: silotree9.setVisibility(View.VISIBLE);score =9;break;
-                case 10: silotree10.setVisibility(View.VISIBLE);score =10;break;
-                case 12:  score = 15;
+                case 1: silotree1.setVisibility(View.VISIBLE); break;
+                case 2: silotree2.setVisibility(View.VISIBLE); break;
+                case 3: silotree3.setVisibility(View.VISIBLE); break;
+                case 4: silotree4.setVisibility(View.VISIBLE); break;
+                case 5: silotree5.setVisibility(View.VISIBLE); break;
+                case 6: silotree6.setVisibility(View.VISIBLE); break;
+                case 7: silotree7.setVisibility(View.VISIBLE);break;
+                case 8: silotree8.setVisibility(View.VISIBLE);break;
+                case 9: silotree9.setVisibility(View.VISIBLE);break;
+                case 10: silotree10.setVisibility(View.VISIBLE);break;
+                case 12:
                     Random r = new Random();
                     int num = r.nextInt(3 - 1 + 1) + 1;//(max-min+1)+1
                        switch(num){
