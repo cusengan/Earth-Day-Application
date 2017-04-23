@@ -86,15 +86,6 @@
                 android:textColor="#0d0a0c" />
 
             <ImageView
-                android:id="@+id/yahoo"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="0.23"
-                android:contentDescription="@string/yahoologo"
-                android:layout_gravity="center_vertical|center_horizontal"
-                app:srcCompat="@drawable/yahoo" />
-
-            <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
@@ -110,6 +101,16 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="Classical musical for your plants to grow"
                 android:textSize="25sp"/>
+
+            <ImageView
+                android:id="@+id/yahoo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="0.23"
+                android:textColor="#0d0a0c"
+                android:contentDescription="@string/yahoologo"
+                app:srcCompat="@drawable/yahoo" />
         </LinearLayout>
     </ScrollView>
 

@@ -2,7 +2,8 @@ package com.example.william.earthdayapplication;
 
 
 import android.content.Intent;
-
+import android.view.KeyEvent;
+import  android.view.View.OnKeyListener;
 
 import android.content.ClipData;
 import android.content.Context;
@@ -23,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -91,12 +93,34 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
                     mySound.start();
                 } else {
                     Toast.makeText(getApplicationContext(), "OFF", Toast.LENGTH_LONG).show();
-                    mySound.stop();
+                    mySound.pause();;
                 }
             }
         });
 
         progress.show();
+
+        // Set a key listener callback so that users can search by pressing "Enter"
+        UserInput.setOnKeyListener(new OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode) {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            searchButton(v);
+                            return true;
+                    }
+                        String input = UserInput.getText().toString();
+                        if (input.contains("\n")) {
+                            searchButton(v);
+                            return true;
+                            }
+                    }
+                    return false;
+            }
+        });
 
     }
 
@@ -162,12 +186,12 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     public void searchButton(View view){
         if(UserInput != null && !UserInput.equals("")){
             service.refreshWeather(UserInput.getText().toString());
-            progress.show();
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            //UserInput.setVisibility(View.GONE);
+           // progress.show();
         }
-
-
     }
-
 
 
 
