@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         if (itemClicked == R.id.item_Send) {
             if(temp < 33){
-                String message = "Your tender plants will die from this cold weather. Bring them in!";
+                String message = "Your tender plants will die from this cold weather. Bring them in!\n\nSent from the ";
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
             }else if (temp < 29){
