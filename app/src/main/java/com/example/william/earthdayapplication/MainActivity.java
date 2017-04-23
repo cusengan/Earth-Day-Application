@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private TextView Condition;
     private TextView Location;
     private TextView Speech2;
+    private TextView Speech3;
+    private TextView Speech4;
 
     private ImageView silotree1;
     private ImageView silotree2;
@@ -76,9 +78,12 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private Switch VibrateSwitch;
     private Switch MusicSwitch;
 
+    private int play;
     private int temp;
+    private int score;
     private MediaPlayer mySound;
     private ImageSwitcher sw;
+    private int twiceCheck = 0;
 
 
     @Override
@@ -107,6 +112,8 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         Condition = (TextView) findViewById(R.id.Condition);
         Location = (TextView) findViewById(R.id.Location);
         Speech2 = (TextView) findViewById(R.id.Speech2);
+        Speech3 = (TextView) findViewById(R.id.Speech3);
+        Speech4 = (TextView) findViewById(R.id.Speech4);
         yahoo = (ImageView) findViewById(R.id.yahoo);
         VibrateSwitch = (Switch) findViewById(R.id.MusicSwitch);
         MusicSwitch = (Switch) findViewById(R.id.MusicSwitch);
@@ -124,10 +131,11 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Toast.makeText(getApplicationContext(), "ON", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "ON, your plants will thank you!", Toast.LENGTH_LONG).show();
                     mySound.start();
+                    Win(score);
                 } else {
-                    Toast.makeText(getApplicationContext(), "OFF", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "OFF :(", Toast.LENGTH_LONG).show();
                     mySound.pause();;
                 }
             }
@@ -220,12 +228,19 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
 
     public void searchButton(View view){
-        if(UserInput != null && !UserInput.equals("")){
-            service.refreshWeather(UserInput.getText().toString());
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-            //UserInput.setVisibility(View.GONE);
-            progress.show();
+        if(UserInput != null && !UserInput.equals("")) {
+            twiceCheck += 1;
+            if (twiceCheck <= 2) {
+                Toast.makeText(getApplicationContext(), "Good job trying to learn more about your planet's climate", Toast.LENGTH_LONG).show();
+                Win(score);
+                service.refreshWeather(UserInput.getText().toString());
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                //UserInput.setVisibility(View.GONE);
+                progress.show();
+            }if(twiceCheck == 3){
+                Toast.makeText(getApplicationContext(), "Keep being curious. However; no more tree points for searching, try again later", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -233,21 +248,79 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         Random r = new Random();
         int num = r.nextInt(10 - 1 + 1) + 1;//(max-min+1)+1
         switch (num){
-            case 1: silotree1.setVisibility(View.VISIBLE);break;
-            case 2: silotree2.setVisibility(View.VISIBLE);break;
-            case 3: silotree3.setVisibility(View.VISIBLE);break;
-            case 4: silotree4.setVisibility(View.VISIBLE);break;
-            case 5: silotree5.setVisibility(View.VISIBLE);break;
-            case 6: silotree6.setVisibility(View.VISIBLE);break;
-            case 7: silotree7.setVisibility(View.VISIBLE);break;
-            case 8: silotree8.setVisibility(View.VISIBLE);break;
-            case 9: silotree9.setVisibility(View.VISIBLE);break;
-            case 10: silotree10.setVisibility(View.VISIBLE);break;
+            case 1: silotree1.setVisibility(View.VISIBLE); score = 1;break;
+            case 2: silotree2.setVisibility(View.VISIBLE); score =2;break;
+            case 3: silotree3.setVisibility(View.VISIBLE); score =3;break;
+            case 4: silotree4.setVisibility(View.VISIBLE); score =4;break;
+            case 5: silotree5.setVisibility(View.VISIBLE); score =5;break;
+            case 6: silotree6.setVisibility(View.VISIBLE);score =6;break;
+            case 7: silotree7.setVisibility(View.VISIBLE);score =7;break;
+            case 8: silotree8.setVisibility(View.VISIBLE);score =8;break;
+            case 9: silotree9.setVisibility(View.VISIBLE);score =9;break;
+            case 10: silotree10.setVisibility(View.VISIBLE);score =10;break;
         }
+        play = 777;
         YesButton.setVisibility(View.GONE);
         Speech2.setVisibility(View.VISIBLE);
     }
 
+    public void changed(int score){
+        if (play == 777){
+            switch (score){
+                case 1: silotree1.setVisibility(View.GONE); score = 1;break;
+                case 2: silotree2.setVisibility(View.GONE); score =2;break;
+                case 3: silotree3.setVisibility(View.GONE); score =3;break;
+                case 4: silotree4.setVisibility(View.GONE); score =4;break;
+                case 5: silotree5.setVisibility(View.GONE); score =5;break;
+                case 6: silotree6.setVisibility(View.GONE);score =6;break;
+                case 7: silotree7.setVisibility(View.GONE);score =7;break;
+                case 8: silotree8.setVisibility(View.GONE);score =8;break;
+                case 9: silotree9.setVisibility(View.GONE);score =9;break;
+                case 10: silotree10.setVisibility(View.GONE);score =10;break;
+            }
+        }
+
+    }
+
+    public void Lose(int score){
+        changed(score);
+        score -= 1;
+        if (play == 777){
+            switch (score){
+                case 1: silotree1.setVisibility(View.VISIBLE); score = 1;break;
+                case 2: silotree2.setVisibility(View.VISIBLE); score =2;break;
+                case 3: silotree3.setVisibility(View.VISIBLE); score =3;break;
+                case 4: silotree4.setVisibility(View.VISIBLE); score =4;break;
+                case 5: silotree5.setVisibility(View.VISIBLE); score =5;break;
+                case 6: silotree6.setVisibility(View.VISIBLE);score =6;break;
+                case 7: silotree7.setVisibility(View.VISIBLE);score =7;break;
+                case 8: silotree8.setVisibility(View.VISIBLE);score =8;break;
+                case 9: silotree9.setVisibility(View.VISIBLE);score =9;break;
+                case 10: silotree10.setVisibility(View.VISIBLE);score =10;break;
+            }
+        }
+
+    }
+
+    public void Win(int score){
+        changed(score);
+        score += 1;
+        if (play == 777){
+            switch (score){
+                case 1: silotree1.setVisibility(View.VISIBLE); score = 1;break;
+                case 2: silotree2.setVisibility(View.VISIBLE); score =2;break;
+                case 3: silotree3.setVisibility(View.VISIBLE); score =3;break;
+                case 4: silotree4.setVisibility(View.VISIBLE); score =4;break;
+                case 5: silotree5.setVisibility(View.VISIBLE); score =5;break;
+                case 6: silotree6.setVisibility(View.VISIBLE);score =6;break;
+                case 7: silotree7.setVisibility(View.VISIBLE);score =7;break;
+                case 8: silotree8.setVisibility(View.VISIBLE);score =8;break;
+                case 9: silotree9.setVisibility(View.VISIBLE);score =9;break;
+                case 10: silotree10.setVisibility(View.VISIBLE);score =10;break;
+            }
+        }
+
+    }
 
     public void composeMmsMessage(String message, Uri attachment) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
@@ -257,6 +330,8 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         intent.putExtra(Intent.EXTRA_STREAM, attachment);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
+            Toast.makeText(getApplicationContext(), "Thank you for spreading important facts! +1 tree point", Toast.LENGTH_LONG).show();
+            Win(score);
         }
     }
         

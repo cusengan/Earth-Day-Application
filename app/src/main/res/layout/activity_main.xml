@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_weight="0.23"
-                android:background="#c2458c"
+                android:background="#6007a4"
                 android:onClick="searchButton"
                 android:text="@string/SearchButton"
                 android:paddingLeft="80dp"
@@ -103,7 +103,7 @@
                 android:gravity="center"
                 android:text="Ready to take care of mother Earth?"
                 android:textSize="30sp"
-                android:textColor="#0d0a0c"
+                android:textColor="#de06a0"
                 android:paddingBottom="60dp" />
 
 
@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_weight="0.23"
-                android:background="#c2458c"
+                android:background="#6007a4"
                 android:onClick="YesButton"
                 android:text="Yes"
                 android:paddingLeft="80dp"
@@ -229,18 +229,32 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.30"
                 android:gravity="center"
-                android:text="Take care of the Earth and perform helpful tasks to have your tree grow or watch it wilt!"
-                android:textSize="30sp"
-                android:textColor="#0d0a0c"
-                android:paddingBottom="60dp"
-                android:visibility="gone"/>
+                android:text="Take care of the Earth and perform helpful tasks to have your tree grow or watch it wilt! Given tree is of a random healthiness."
+                android:textSize="40sp"
+                android:textColor="#de06a0"
+                android:paddingBottom="40dp"
+                android:visibility="gone"
+                android:paddingTop="70dp"/>
+
+            <TextView
+                android:id="@+id/Speech3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:text="Classical music aren't just great cause they're old enough to fall into public domain... some claim they can help plants grow!"
+                android:textSize="25sp"
+                android:textColor="#de06a0"
+                android:paddingBottom="30dp"
+                android:visibility="visible"
+                android:paddingTop="150dp"/>
 
             <ImageView
                 android:id="@+id/flowerView"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.23"
-                android:paddingTop="100dp"
+                android:paddingTop="10dp"
                 android:adjustViewBounds="true"
                 android:layout_gravity="center_vertical|center_horizontal"
                 app:srcCompat="@drawable/plant" />
@@ -250,17 +264,31 @@
                 android:layout_width="300dp"
                 android:layout_height="100dp"
                 android:layout_weight="0.23"
+                android:textColor="#de06a0"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="Classical musical for your plants to grow"
                 android:textSize="25sp"/>
 
+            <TextView
+                android:id="@+id/Speech4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:text="Be sure to visit the drop down menu in the upper right hand corner for more"
+                android:textSize="25sp"
+                android:textColor="#de06a0"
+                android:paddingBottom="20dp"
+                android:visibility="visible"
+                android:paddingTop="20dp"/>
+
             <ImageView
                 android:id="@+id/yahoo"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_weight="0.23"
-                android:textColor="#0d0a0c"
+                android:textColor="#de06a0"
                 android:contentDescription="@string/yahoologo"
                 app:srcCompat="@drawable/yahoo" />
         </LinearLayout>

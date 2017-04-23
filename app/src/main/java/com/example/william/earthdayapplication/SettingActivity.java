@@ -13,6 +13,7 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class SettingActivity extends AppCompatActivity {
+    private int twiceChecker;
 
     Button button;
     TextView factView;
@@ -44,7 +45,13 @@ public class SettingActivity extends AppCompatActivity {
 
     public void generateFact(View view){
         Random rand = new Random();
-
+        twiceChecker += 1;
+        if (twiceChecker == 1){
+            Toast.makeText(getApplicationContext(), "There's more fact where that came from", Toast.LENGTH_LONG).show();
+        }
+        if (twiceChecker == 2){
+            Toast.makeText(getApplicationContext(), "Unfortunately, there's no tree points here", Toast.LENGTH_LONG).show();
+        }
         int n = rand.nextInt(facts.length);
         factView.setText(facts[n]);
 
