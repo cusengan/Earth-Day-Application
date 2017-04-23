@@ -38,6 +38,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Random;
 
 import com.example.william.earthdayapplication.data.Channel;
 import com.example.william.earthdayapplication.data.Item;
@@ -52,9 +53,23 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     private TextView Temperature;
     private TextView Condition;
     private TextView Location;
+    private TextView Speech2;
+
+    private ImageView silotree1;
+    private ImageView silotree2;
+    private ImageView silotree3;
+    private ImageView silotree4;
+    private ImageView silotree5;
+    private ImageView silotree6;
+    private ImageView silotree7;
+    private ImageView silotree8;
+    private ImageView silotree9;
+    private ImageView silotree10;
+
 
     private YahooWeather service;
     private Button SearchButton;
+    private Button YesButton;
     private ProgressDialog progress;
     private ImageView yahoo;
 
@@ -73,10 +88,25 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         UserInput = (EditText) findViewById(R.id.UserInput);
         SearchButton = (Button) findViewById(R.id.SearchButton);
+        YesButton = (Button) findViewById(R.id.YesButton);
+
+        silotree1 = (ImageView) findViewById(R.id.silotree1);
+        silotree2 = (ImageView) findViewById(R.id.silotree2);
+        silotree3 = (ImageView) findViewById(R.id.silotree3);
+        silotree4 = (ImageView) findViewById(R.id.silotree4);
+        silotree5 = (ImageView) findViewById(R.id.silotree5);
+        silotree6 = (ImageView) findViewById(R.id.silotree6);
+        silotree7 = (ImageView) findViewById(R.id.silotree7);
+        silotree8 = (ImageView) findViewById(R.id.silotree8);
+        silotree9 = (ImageView) findViewById(R.id.silotree9);
+        silotree10 = (ImageView) findViewById(R.id.silotree10);
+
+
         weatherPic = (ImageView) findViewById(R.id.weather_picture);
         Temperature = (TextView) findViewById(R.id.Temperature);
         Condition = (TextView) findViewById(R.id.Condition);
         Location = (TextView) findViewById(R.id.Location);
+        Speech2 = (TextView) findViewById(R.id.Speech2);
         yahoo = (ImageView) findViewById(R.id.yahoo);
         VibrateSwitch = (Switch) findViewById(R.id.MusicSwitch);
         MusicSwitch = (Switch) findViewById(R.id.MusicSwitch);
@@ -86,16 +116,8 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         progress = new ProgressDialog(this);
         progress.setMessage("Loading . . .");
 
-        ImageButton Pot = (ImageButton)findViewById(R.id.potButton);
-
-        Pot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
         service.refreshWeather("Arlington, TX");
+
 
         MusicSwitch = (Switch) findViewById(R.id.MusicSwitch);
         MusicSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -207,7 +229,24 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         }
     }
 
-
+    public void YesButton(View view) {
+        Random r = new Random();
+        int num = r.nextInt(10 - 1 + 1) + 1;//(max-min+1)+1
+        switch (num){
+            case 1: silotree1.setVisibility(View.VISIBLE);break;
+            case 2: silotree2.setVisibility(View.VISIBLE);break;
+            case 3: silotree3.setVisibility(View.VISIBLE);break;
+            case 4: silotree4.setVisibility(View.VISIBLE);break;
+            case 5: silotree5.setVisibility(View.VISIBLE);break;
+            case 6: silotree6.setVisibility(View.VISIBLE);break;
+            case 7: silotree7.setVisibility(View.VISIBLE);break;
+            case 8: silotree8.setVisibility(View.VISIBLE);break;
+            case 9: silotree9.setVisibility(View.VISIBLE);break;
+            case 10: silotree10.setVisibility(View.VISIBLE);break;
+        }
+        YesButton.setVisibility(View.GONE);
+        Speech2.setVisibility(View.VISIBLE);
+    }
 
 
     public void composeMmsMessage(String message, Uri attachment) {
@@ -260,7 +299,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
             }else{
-                String message = "Play outside, plant a tree, be green and mean!!!";
+                String message = "Play outside, plant a tree, be green!";
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
             }

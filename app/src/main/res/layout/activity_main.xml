@@ -101,28 +101,146 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.30"
                 android:gravity="center"
-                android:text="Ready to take care of your plant?"
+                android:text="Ready to take care of mother Earth?"
                 android:textSize="30sp"
                 android:textColor="#0d0a0c"
                 android:paddingBottom="60dp" />
 
 
-            <ImageButton
-                android:id="@+id/potButton"
+            <Button
+                android:id="@+id/YesButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:maxWidth="350dp"
-                android:maxHeight="250dp"
-                android:scaleType="fitCenter"
+                android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_weight="0.23"
-                app:srcCompat="@drawable/potplant" />
+                android:background="#c2458c"
+                android:onClick="YesButton"
+                android:text="Yes"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
+            <ImageView
+                android:id="@+id/silotree1"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+            app:srcCompat="@drawable/silo4" />
+            <ImageView
+                android:id="@+id/silotree2"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo3" />
+            <ImageView
+                android:id="@+id/silotree3"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo1" />
+            <ImageView
+                android:id="@+id/silotree4"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo5" />
+            <ImageView
+                android:id="@+id/silotree5"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo2" />
+            <ImageView
+                android:id="@+id/silotree6"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo9" />
+            <ImageView
+                android:id="@+id/silotree7"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo7" />
+            <ImageView
+                android:id="@+id/silotree8"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo6" />
+            <ImageView
+                android:id="@+id/silotree9"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo8" />
+            <ImageView
+                android:id="@+id/silotree10"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo10" />
+
+
+            <TextView
+                android:id="@+id/Speech2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:text="Take care of the Earth and perform helpful tasks to have your tree grow or watch it wilt!"
+                android:textSize="30sp"
+                android:textColor="#0d0a0c"
+                android:paddingBottom="60dp"
+                android:visibility="gone"/>
 
             <ImageView
                 android:id="@+id/flowerView"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.23"
+                android:paddingTop="100dp"
                 android:adjustViewBounds="true"
                 android:layout_gravity="center_vertical|center_horizontal"
                 app:srcCompat="@drawable/plant" />
