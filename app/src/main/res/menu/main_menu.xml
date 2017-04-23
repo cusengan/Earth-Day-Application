@@ -20,9 +20,6 @@
         android:id="@+id/item_Send"
         />
 
-    <item
-        android:title="Help"
-        android:id="@+id/item_Help"
-        />
+    
 
 </menu>
