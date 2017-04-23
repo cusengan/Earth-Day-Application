@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
             InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             //UserInput.setVisibility(View.GONE);
-           // progress.show();
+            progress.show();
         }
     }
 
@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     public boolean onOptionsItemSelected(MenuItem item){
         int itemClicked = item.getItemId();
 
-        if(itemClicked == R.id.item_Setting){
+        if(itemClicked == R.id.item_Facts){
 
             Context context = MainActivity.this;
             Intent activity_setting = new Intent(context, SettingActivity.class);

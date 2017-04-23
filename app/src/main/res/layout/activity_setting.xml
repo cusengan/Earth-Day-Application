@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +7,27 @@
     tools:context="com.example.william.earthdayapplication.SettingActivity">
 
 
-    <Switch
-        android:id="@+id/VibrateSwitch"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_weight="1"
-        android:text="Turn notification on/off"
-        android:textSize="25sp" />
+    <Button
+        android:id="@+id/buttonFacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="146dp"
+        android:text="Random Fact"
+        android:onClick="generateFact"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/factText"
+        android:text="Random Fact"
+        android:layout_below="@+id/buttonFacts"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:textSize="20sp"/>
+
+</RelativeLayout>
