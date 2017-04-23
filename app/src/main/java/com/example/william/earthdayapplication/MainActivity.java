@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         progress.show();
 
-        // Set a key listener callback so that users can search by pressing "Enter"
+         //Set a key listener callback so that users can search by pressing "Enter"
         UserInput.setOnKeyListener(new OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -183,9 +183,10 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
     @Override
     public void serviceFail(Exception exception) {
-        Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG).show();
-        Temperature.setText(exception.getMessage());
         progress.hide();
+        Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG).show();
+
+
     }
 
     @Override
@@ -202,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
             InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             //UserInput.setVisibility(View.GONE);
-           // progress.show();
+            progress.show();
         }
     }
 
@@ -225,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
     public boolean onOptionsItemSelected(MenuItem item){
         int itemClicked = item.getItemId();
 
-        if(itemClicked == R.id.item_Setting){
+        if(itemClicked == R.id.item_Facts){
 
             Context context = MainActivity.this;
             Intent activity_setting = new Intent(context, SettingActivity.class);
@@ -247,15 +248,19 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
         if (itemClicked == R.id.item_Send) {
             if(temp < 33){
-                String message = "Your tender plants will die from this cold weather. Bring them in!";
+                String message = "Your tender plants will die from this cold weather. Bring them in!\n\nSent from the ";
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
-            }if (temp < 29){
+            }else if (temp < 29){
                 String message = "Your fruits and moderately hard plants from this cold weather. Bring them in!";
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
-            }if (temp > 89) {
+            }else if (temp > 89) {
                 String message = "Your non-desert biome plants require slightly more water!";
+                Uri webpage = Uri.parse(message);
+                composeMmsMessage(message, webpage);
+            }else{
+                String message = "Play outside, plant a tree, be green and mean!!!";
                 Uri webpage = Uri.parse(message);
                 composeMmsMessage(message, webpage);
             }

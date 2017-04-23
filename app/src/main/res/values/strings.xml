@@ -1,7 +1,7 @@
 <resources>
 
     <string name="UserInput">Search City Here.</string>
-    <string name="app_name">EarthDayApplication</string>
+    <string name="app_name">GrOwFlO</string>
     <string name="SearchButton">Hit Search</string>
     <string name="weatherpic">weather here</string>
     <string name="Temperature">Temperature</string>
@@ -12,15 +12,13 @@
 
 
     <string name="instructionsHelp">
-        Hi, welcome to Flower Power (name subject to change)! This app will ensure that flower lovers are able to take care of their
-        plants while checking the weather. Users are able to type in almost every city in the world and are able to get the temperature
-        reading and a message explaing how to take care of their plant.\n\n
+        Hi, welcome to GrOwFlO! This app will ensure that flower lovers are able to take care of their
+        plants while doing something they always do: check the weather. Users are able to type in almost every city
+        in the world and are able to get the temperature reading and a message explaing how to take care of their plant
+        in that type of environment.\n\n
 
 
-        Thanks to VClouds @ DevianArt for the photos! (http://vclouds.deviantart.com/art/VClouds-Weather-Icons-179152045)
-
-
-
+        Thanks to VClouds @ DevianArt for the weather photos! (http://vclouds.deviantart.com/art/VClouds-Weather-Icons-179152045)
 
 
     </string>

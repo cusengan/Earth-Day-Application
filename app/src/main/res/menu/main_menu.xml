@@ -11,8 +11,8 @@
         />
 
     <item
-        android:title="Settings"
-        android:id="@+id/item_Setting"
+        android:title="Facts"
+        android:id="@+id/item_Facts"
         />
 
     <item
