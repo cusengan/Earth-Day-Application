@@ -2,6 +2,7 @@ package com.example.william.earthdayapplication;
 
 
 import android.content.Intent;
+import android.media.Image;
 import android.view.KeyEvent;
 import  android.view.View.OnKeyListener;
 
@@ -28,6 +29,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Switch;
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
     private int temp;
     private MediaPlayer mySound;
+    private ImageSwitcher sw;
 
 
     @Override
@@ -81,6 +85,15 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
         service = new YahooWeather(this);
         progress = new ProgressDialog(this);
         progress.setMessage("Loading . . .");
+
+        ImageButton Pot = (ImageButton)findViewById(R.id.potButton);
+
+        Pot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         service.refreshWeather("Arlington, TX");
 

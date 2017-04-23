@@ -95,11 +95,35 @@
                 android:textColor="#0d0a0c"
                 android:paddingBottom="80dp"/>
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+            <TextView
+                android:id="@+id/Speech1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:text="Ready to take care of your plant?"
+                android:textSize="30sp"
+                android:textColor="#0d0a0c"
+                android:paddingBottom="60dp" />
+
+
+            <ImageButton
+                android:id="@+id/potButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="350dp"
+                android:maxHeight="250dp"
+                android:scaleType="fitCenter"
                 android:layout_weight="0.23"
+                app:srcCompat="@drawable/potplant" />
+
+            <ImageView
+                android:id="@+id/flowerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:adjustViewBounds="true"
                 android:layout_gravity="center_vertical|center_horizontal"
                 app:srcCompat="@drawable/plant" />
 
