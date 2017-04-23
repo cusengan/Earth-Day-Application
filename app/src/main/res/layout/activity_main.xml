@@ -35,7 +35,8 @@
                 android:layout_weight="0.23"
                 android:gravity="center"
                 android:hint="@string/UserInput"
-                android:textSize="35sp" />
+                android:textSize="35sp"
+                android:paddingBottom="20dp"/>
 
             <Button
                 android:id="@+id/SearchButton"
@@ -43,9 +44,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_weight="0.23"
-                android:background="#ecff8c"
+                android:background="#6007a4"
                 android:onClick="searchButton"
-                android:text="@string/SearchButton" />
+                android:text="@string/SearchButton"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
 
             <ImageView
                 android:id="@+id/weather_picture"
@@ -53,7 +58,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.40"
                 android:contentDescription="@string/weatherpic"
-                android:src="@drawable/na" />
+                android:src="@drawable/na"
+                android:paddingTop="15dp"
+                android:paddingLeft="80dp"
+                android:paddingRight="100dp"
+                android:paddingBottom="15dp"/>
 
             <TextView
                 android:id="@+id/Temperature"
@@ -83,13 +92,170 @@
                 android:gravity="center"
                 android:text="@string/Location"
                 android:textSize="45sp"
-                android:textColor="#0d0a0c" />
+                android:textColor="#0d0a0c"
+                android:paddingBottom="80dp"/>
+
+            <TextView
+                android:id="@+id/Speech1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:text="Ready to take care of mother Earth?"
+                android:textSize="30sp"
+                android:textColor="#de06a0"
+                android:paddingBottom="60dp" />
+
+
+            <Button
+                android:id="@+id/YesButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="0.23"
+                android:background="#6007a4"
+                android:onClick="YesButton"
+                android:text="Yes"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:id="@+id/silotree1"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+            app:srcCompat="@drawable/silo4" />
+            <ImageView
+                android:id="@+id/silotree2"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo3" />
+            <ImageView
+                android:id="@+id/silotree3"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo1" />
+            <ImageView
+                android:id="@+id/silotree4"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo5" />
+            <ImageView
+                android:id="@+id/silotree5"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo2" />
+            <ImageView
+                android:id="@+id/silotree6"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo9" />
+            <ImageView
+                android:id="@+id/silotree7"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo7" />
+            <ImageView
+                android:id="@+id/silotree8"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo6" />
+            <ImageView
+                android:id="@+id/silotree9"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo8" />
+            <ImageView
+                android:id="@+id/silotree10"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="75dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="gone"
+                app:srcCompat="@drawable/silo10" />
+
+
+            <TextView
+                android:id="@+id/Speech2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:text="Take care of the Earth and perform helpful tasks to have your tree grow or watch it wilt! Given tree is of a random healthiness."
+                android:textSize="25sp"
+                android:textColor="#de06a0"
+                android:paddingBottom="25dp"
+                android:visibility="gone"
+                android:paddingTop="70dp"/>
+
+            <TextView
+                android:id="@+id/Speech3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:text="Classical music aren't just great cause they're old enough to fall into public domain... some claim they can help plants grow!"
+                android:textSize="25sp"
+                android:textColor="#de06a0"
+                android:paddingBottom="30dp"
+                android:visibility="visible"
+                android:paddingTop="150dp"/>
+
+            <ImageView
+                android:id="@+id/flowerView"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:paddingTop="10dp"
+                android:adjustViewBounds="true"
                 android:layout_gravity="center_vertical|center_horizontal"
                 app:srcCompat="@drawable/plant" />
 
@@ -98,17 +264,85 @@
                 android:layout_width="300dp"
                 android:layout_height="100dp"
                 android:layout_weight="0.23"
+                android:textColor="#de06a0"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="Classical musical for your plants to grow"
                 android:textSize="25sp"/>
 
             <ImageView
+                android:id="@+id/imgBig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="250dp"
+                android:maxHeight="250dp"
+                android:scaleType="fitCenter"
+                android:paddingTop="60dp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:srcCompat="@drawable/bigtree" />
+
+            <ImageView
+                android:id="@+id/imgPalm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="250dp"
+                android:maxHeight="250dp"
+                android:scaleType="fitCenter"
+                android:paddingTop="60dp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:srcCompat="@drawable/palm" />
+
+
+            <ImageView
+                android:id="@+id/imgSak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="250dp"
+                android:maxHeight="250dp"
+                android:scaleType="fitCenter"
+                android:paddingTop="60dp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="@drawable/sakura" />
+
+            <TextView
+                android:id="@+id/Speech5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:text="Congratuation, this tree is the result of your preseverance."
+                android:textColor="#de06a0"
+                android:textSize="25sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/Speech4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:gravity="center"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:text="Be sure to visit the drop down menu in the upper right hand corner for more"
+                android:textColor="#de06a0"
+                android:textSize="25sp"
+                android:visibility="visible" />
+
+            <ImageView
                 android:id="@+id/yahoo"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_weight="0.23"
-                android:textColor="#0d0a0c"
+                android:textColor="#de06a0"
                 android:contentDescription="@string/yahoologo"
                 app:srcCompat="@drawable/yahoo" />
         </LinearLayout>
