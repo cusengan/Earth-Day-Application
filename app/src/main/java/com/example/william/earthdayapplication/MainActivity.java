@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
                     mySound.start();
                 } else {
                     Toast.makeText(getApplicationContext(), "OFF", Toast.LENGTH_LONG).show();
-                    mySound.stop();
+                    mySound.pause();;
                 }
             }
         });
