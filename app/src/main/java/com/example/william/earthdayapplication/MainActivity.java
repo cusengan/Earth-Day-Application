@@ -372,10 +372,7 @@ public class MainActivity extends AppCompatActivity implements WeatherCB {
 
 
         }
-        if (itemClicked == R.id.item_Help) {
 
-
-        }
 
         if (itemClicked == R.id.item_Send) {
             if(temp < 33){
