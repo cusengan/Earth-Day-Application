@@ -1,6 +1,6 @@
 # GROWFLO
 
-GROWFLO is and Android application developed during EARTHACK DFW 2017. Using GROWFLO, users can input a city and be given the weather of the city and information on how to take care of their plants in that location. As the users use the app more and more, they are rewarded.
+GROWFLO is an Android application developed during EARTHACK DFW 2017. Using GROWFLO, users can input a city and be given the weather of the city and information on how to take care of their plants in that location. As the users use the app more and more, they are rewarded by having a virtual plant grow.
 
 ## Getting Started
 
